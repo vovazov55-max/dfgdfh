@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PR12</string>
+    <string name="text1">ТИМУР ХАИРТДИНОВ</string>
+    <string name="text2">ПРОГРАММИСТ\nУрТИСИ\nСибГУТИ</string>
+    <string name="text3">89122352005\nтг: @programmaby\n\n</string>
+    <string name="hello">Hello World!</string>
+    <string name="photo_description">Фото</string>
+</resources>
