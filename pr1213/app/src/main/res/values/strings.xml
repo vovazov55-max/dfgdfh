@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">pr1213</string>
+    <string name="hello">Hello World!</string>
+    <string name="action_settings">Настройки</string>
+    <string name="action1">Первый</string>
+    <string name="action2">Второй</string>
+    <string name="action3">Третий</string>
+    <string name="selected_first">Вы выбрали Первый пункт</string>
+    <string name="selected_second">Вы выбрали Второй пункт</string>
+    <string name="selected_third">Вы выбрали Третий пункт</string>
+    <string name="selected_settings">Открыты настройки</string>
+</resources>
