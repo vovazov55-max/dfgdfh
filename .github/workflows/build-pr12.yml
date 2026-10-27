@@ -1,0 +1,39 @@
+name: Build PR12 APK
+
+on:
+  push:
+    paths:
+      - 'PR12/**'
+      - '.github/workflows/build-pr12.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: PR12
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Accept Android SDK licenses
+        working-directory: .
+        run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
+
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
+      - name: Build APK
+        run: ./gradlew assembleDebug assembleRelease --no-daemon
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pr12-apk
+          path: |
+            PR12/app/build/outputs/apk/debug/*.apk
+            PR12/app/build/outputs/apk/release/*.apk
